@@ -45,7 +45,7 @@ def compare_two_time(timeBig: str, timeSmall: str):
 
 def check_valid_syntax_hours(time: str):
     ret = True
-    if (len(time) == 1 and time[0] != 0): # a, ~, !, -
+    if (len(time) == 1 and time[0] != "0"): # a, ~, !, -
         ret = False
     elif (len(time) <= 5): # HH:MM
         # Fine ":"

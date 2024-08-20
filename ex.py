@@ -1,12 +1,13 @@
-from datetime import datetime 
-  
-start = datetime.strptime("1:40", "%H:%M") 
-end = datetime.strptime("11:40", "%H:%M") 
-print(str(start))
+import tkinter as tk 
+from tkinter import ttk 
+from tkinter.messagebox import showinfo
 
-difference = end - start 
-print(str(difference)[:2])
-
-
-a = ":abcdef"
-print(a.split(":"))
+root = tk.Tk() 
+root.geometry('300x200') 
+root.resizable(False, False) 
+root.title('Checkbox Demo') 
+agreement = tk.StringVar() 
+def agreement_changed(): 
+    tk.messagebox.showinfo(title='Result', message=agreement.get()) 
+    ttk.Checkbutton(root, text='I agree', command=agreement_changed, variable=agreement, onvalue='agree', offvalue='disagree').pack() 
+root.mainloop()
